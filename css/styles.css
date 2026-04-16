@@ -370,9 +370,6 @@ h1, h2, h3 {
         width: auto;
         height: auto;
     }
-    .aboutus-button {
-        bottom: 3.5rem;
-    }
     .contenido-hero p{
         font-size: 2rem ;
     }
@@ -463,7 +460,7 @@ h1, h2, h3 {
     margin-top: 5rem;
     max-width: 80ch;
     width: 100%;
-    font-size: clamp(2.2rem, 2.8vw, 2.8rem);
+    font-size: clamp(1.8rem, 2.8vw, 2.8rem);
     text-align: center;
     line-height: 4rem;
     margin-left: auto;
@@ -478,7 +475,7 @@ h1, h2, h3 {
 
 .nosotros h2 {
     font-weight:bold;
-    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     color: #111c48;
 }
 
@@ -507,7 +504,7 @@ h1, h2, h3 {
 
 .obras h2{
     font-weight: bold;
-    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     margin-bottom: 5rem;
 }
 
@@ -643,7 +640,7 @@ button.next {
 
 .servicios h2 {
     font-weight: bold;
-    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     margin: 10rem 0 7rem 0;
 }
 
@@ -871,7 +868,7 @@ button.next {
 }
 
 .work-places h2 {
-    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     font-weight: bold;
     margin: 9rem 0 5rem 0; 
 }
@@ -898,7 +895,7 @@ button.next {
 .lugares-container .lugares-track span {
     display: inline-block;
     margin: 0 2rem 7rem 2rem;
-    font-size: clamp(2.2rem, 3vw, 3rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     padding: 0.8rem 1.6rem;
     background: #ffffff;
     border: 1px solid #dce2f1;
@@ -918,7 +915,7 @@ button.next {
 /* --Sección de preguntas frecuentes-- */
 
 .faq-section h2{
-    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     font-weight: bold;
     margin-bottom: 4rem;
 }
@@ -955,7 +952,7 @@ button.next {
 
 .pregunta {
     font-weight: 700;
-    font-size: clamp(2.2rem, 2.6vw, 2.6rem);
+    font-size: clamp(1.8rem, 2.6vw, 2.6rem);
     line-height: 2.5rem;
     display: flex;
     justify-content: space-between;
@@ -980,7 +977,7 @@ button.next {
     max-height: 0; /*Esta propiedad me permite ocultar el contenido del parrafo para después mostarlo con javascript*/
     opacity: 0;
     transition: .3s ease all;
-    font-size: clamp(1.9rem, 2vw, 2.3rem);
+    font-size: clamp(1.6rem, 2vw, 2.3rem);
     padding: 0 0.8rem;
 }
 
@@ -1004,7 +1001,7 @@ button.next {
 
 .contact h2{
     margin-bottom: 7.5rem;
-    font-size: clamp(3.6rem, 5vw, 5rem);
+    font-size: clamp(3.2rem, 5vw, 5rem);
 }
 .social-buttons {
     flex-direction: row;
