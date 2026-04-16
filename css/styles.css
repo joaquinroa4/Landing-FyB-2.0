@@ -574,7 +574,7 @@ h1, h2, h3 {
 }
 
 .carrusel {
-    padding: 2rem;
+    padding: 2rem 1rem;
     overflow: hidden;
     max-width: 99%;
     position: relative;
