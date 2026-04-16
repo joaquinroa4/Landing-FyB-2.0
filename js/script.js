@@ -41,6 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Script para el menu hamburguesa
     const toggle = document.querySelector('.menu-toggled');
     const nav = document.querySelector('.ppal-navigation');
+    const navBackground = document.querySelector('.nav-background');
+
+    const scrollToAnchorWithOffset = (selector) => {
+        const target = document.querySelector(selector);
+        if (!target) {
+            return;
+        }
+
+        const headerOffset = navBackground ? navBackground.getBoundingClientRect().height + 8 : 0;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+        const scrollTop = Math.max(targetPosition - headerOffset, 0);
+
+        window.scrollTo({
+            top: scrollTop,
+            behavior: 'smooth'
+        });
+    };
 
     if (toggle && nav) {
         const navLinks = nav.querySelectorAll('a');
