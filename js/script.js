@@ -44,19 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const navBackground = document.querySelector('.nav-background');
 
     const scrollToAnchorWithOffset = (selector) => {
-        const target = document.querySelector(selector);
-        if (!target) {
-            return;
-        }
-
-        const headerOffset = navBackground ? navBackground.getBoundingClientRect().height + 8 : 0;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-        const scrollTop = Math.max(targetPosition - headerOffset, 0);
-
-        window.scrollTo({
-            top: scrollTop,
-            behavior: 'smooth'
-        });
+    const target = document.querySelector(selector);
+    if (!target) {
+        return;
+    }
+    const headerOffset = navBackground ? navBackground.getBoundingClientRect().height + 8 : 0;
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    const scrollTop = Math.max(targetPosition - headerOffset, 0);
+    window.scrollTo({
+        top: scrollTop,
+        behavior: 'smooth'
+    });
     };
 
     if (toggle && nav) {
@@ -84,7 +82,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach((link) => {
-            link.addEventListener('click', closeNav);
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+
+                if (href && href.startsWith('#') && document.querySelector(href)) {
+                    event.preventDefault();
+                    closeNav();
+                    requestAnimationFrame(() => {
+                        scrollToAnchorWithOffset(href);
+                    });
+                    return;
+                }
+
+                closeNav();
+            });
         });
 
         document.addEventListener('keydown', (event) => {
