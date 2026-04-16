@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Secciones chicas: centradas. Secciones largas: alineadas cerca del inicio para mejor lectura.
         const centeredOffset = Math.max((availableViewport - Math.min(targetHeight, availableViewport)) / 2, 24);
         const sectionOffset = targetHeight > availableViewport ? 16 : centeredOffset;
-        const scrollTop = Math.max(targetPosition - headerOffset - sectionOffset, 0);
+        const visualBiasUp = 40;
+        const scrollTop = Math.max(targetPosition - headerOffset - sectionOffset + visualBiasUp, 0);
 
         window.scrollTo({
             top: scrollTop,
