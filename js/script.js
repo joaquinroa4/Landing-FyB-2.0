@@ -44,17 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const navBackground = document.querySelector('.nav-background');
 
     const scrollToAnchorWithOffset = (selector) => {
-    const target = document.querySelector(selector);
-    if (!target) {
-        return;
-    }
-    const headerOffset = navBackground ? navBackground.getBoundingClientRect().height + 8 : 0;
-    const targetPosition = target.getBoundingClientRect().top + window.scrollY;
-    const scrollTop = Math.max(targetPosition - headerOffset, 0);
-    window.scrollTo({
-        top: scrollTop,
-        behavior: 'smooth'
-    });
+        const target = document.querySelector(selector);
+        if (!target) {
+            return;
+        }
+
+        const headerOffset = navBackground ? navBackground.getBoundingClientRect().height : 0;
+        const targetRect = target.getBoundingClientRect();
+        const targetPosition = targetRect.top + window.scrollY;
+        const availableViewport = Math.max(window.innerHeight - headerOffset, 0);
+        const targetHeight = targetRect.height;
+
+        // Secciones chicas: centradas. Secciones largas: alineadas cerca del inicio para mejor lectura.
+        const centeredOffset = Math.max((availableViewport - Math.min(targetHeight, availableViewport)) / 2, 24);
+        const sectionOffset = targetHeight > availableViewport ? 16 : centeredOffset;
+        const scrollTop = Math.max(targetPosition - headerOffset - sectionOffset, 0);
+
+        window.scrollTo({
+            top: scrollTop,
+            behavior: 'smooth'
+        });
     };
 
     if (toggle && nav) {
@@ -95,6 +104,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 closeNav();
+            });
+        });
+
+        // Aplica el mismo desplazamiento a enlaces internos fuera del menu principal.
+        const internalAnchorLinks = document.querySelectorAll('a[href^="#"]');
+
+        internalAnchorLinks.forEach((link) => {
+            if (nav.contains(link)) {
+                return;
+            }
+
+            link.addEventListener('click', (event) => {
+                const href = link.getAttribute('href');
+                if (!href || !document.querySelector(href)) {
+                    return;
+                }
+
+                event.preventDefault();
+                scrollToAnchorWithOffset(href);
             });
         });
 
