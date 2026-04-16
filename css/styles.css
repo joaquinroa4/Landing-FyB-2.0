@@ -569,7 +569,7 @@ h1, h2, h3 {
 
 @media (max-width: 412px) {
     .carrusel-track .card-obra {
-        width: 93vw;
+        width: 94vw;
     }
     .carrusel-track .card-obra img {
         height: 30rem;
@@ -607,7 +607,7 @@ h1, h2, h3 {
 .card-obra{
     flex: 0 0 auto;
     width: 100%;
-    max-width: 37rem;
+    max-width: 42rem;
     margin: 0 0.7rem 0 0;
     text-align: center;
     display: flex;
