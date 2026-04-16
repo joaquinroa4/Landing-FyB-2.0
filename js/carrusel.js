@@ -14,17 +14,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let touchStartX = 0;
     let touchEndX = 0;
 
-    const getCardWidth = () => cards[0].offsetWidth + 16;
+    const getCardMetrics = () => {
+        const cardWidth = cards[0].offsetWidth;
+        const cardStyles = window.getComputedStyle(cards[0]);
+        const cardGap = parseFloat(cardStyles.marginLeft) + parseFloat(cardStyles.marginRight);
+        const trackStyles = window.getComputedStyle(track);
+        const trackGap = parseFloat(trackStyles.columnGap || trackStyles.gap || '0');
+
+        return {
+            cardWidth,
+            step: cardWidth + cardGap + trackGap,
+            gap: cardGap + trackGap
+        };
+    };
 
     const getVisibleCards = () => {
-        const visible = Math.floor(carousel.offsetWidth / getCardWidth());
+        const { step, gap } = getCardMetrics();
+        const visible = Math.floor((carousel.offsetWidth + gap) / step);
         return Math.max(1, visible);
     };
 
     const getMaxOffset = () => Math.max(0, cards.length - getVisibleCards());
 
     const render = () => {
-        track.style.transform = `translateX(-${offset * getCardWidth()}px)`;
+        track.style.transform = `translateX(-${offset * getCardMetrics().step}px)`;
     };
 
     const moveCarousel = (direction) => {
