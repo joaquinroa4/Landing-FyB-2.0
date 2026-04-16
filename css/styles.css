@@ -981,7 +981,7 @@ button.next {
 }
 
 .pregunta img {
-    width: 2.5rem;
+    width: clamp(1.8rem, 2.6vw, 2.5rem);
 }
 
 .respuesta {
