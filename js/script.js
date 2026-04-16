@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sectionOffset = targetHeight > availableViewport ? 16 : centeredOffset;
         const visualBiasUp = 40;
         const lowerAnchors = new Set(['#servicios', '#faq']);
-        const lowerSectionOffset = lowerAnchors.has(selector) ? 64 : 0;
+        const lowerSectionOffset = lowerAnchors.has(selector) ? 80 : 0;
         const scrollTop = Math.max(targetPosition - headerOffset - sectionOffset + visualBiasUp - lowerSectionOffset, 0);
 
         window.scrollTo({
