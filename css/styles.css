@@ -1120,6 +1120,10 @@ button.next {
     font-weight: 600;
 }
 
+.copyright a:hover {
+    color: var(--gris);
+}
+
 img {
     max-width: 100%;
     display: block;
