@@ -1094,7 +1094,7 @@ button.next {
 .footer-navigation a {
     color: var(--blanco);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     padding: 1rem 3rem;
 }
 
@@ -1111,6 +1111,13 @@ button.next {
     color: var(--blanco);
     width: 100%;
     padding: 0 0.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.5rem);;
+}
+
+.copyright a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 img {
