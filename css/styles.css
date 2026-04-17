@@ -935,7 +935,7 @@ button.next {
 .contenedor-preguntas {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .contenedor-pregunta {
