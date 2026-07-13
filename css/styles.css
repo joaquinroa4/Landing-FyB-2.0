@@ -277,7 +277,7 @@ h1, h2, h3 {
     color: var(--blanco);
     font-weight: bold;
     font-size: clamp(1.6rem, 2.2vw, 2.2rem);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 0.7rem;
     transition: all .2s ease;
 }
